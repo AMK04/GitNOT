@@ -1,0 +1,90 @@
+#' Adds the energy parameters to the classification data frame
+#'
+#' @param classification A data frame with activity data
+#' @param subject A data frame containing subject information e.g. data.frame(subject_age = 50, subject_height = 190, subject_weight = 70, subject_gender = 'male')
+
+#' @importFrom dplyr left_join %>% mutate select
+#' @importFrom data.table data.table setorder
+
+#' @export
+
+addEnergy <- function(classification, subject)
+{
+  
+  ## INPUT CHECKS ==========================================================
+  if ((class(classification)[1] != "data.table") & (class(classification)[1] != "data.frame") & (class(classification)[1] != "tbl_dt")) {
+    stop('classification is not a data frame')
+  }
+  
+  required_class_colls <- c("start", "class", "mi")
+  if (!all(required_class_colls %in% colnames(classification))) {
+    stop(sprintf('Not all required dataFrame columns are present. Missing: %s', paste(collapse = ', ', required_class_colls[!required_class_colls %in% colnames(classification)])))
+  }
+  
+  required_subj_colls <- c("subject_age", "subject_height", "subject_weight", "subject_gender")
+  if (!all(required_subj_colls %in% colnames(subject))) {
+    stop(sprintf('Not all required subject data is present. Missing: %s', paste(collapse = ', ', required_subj_colls[!required_subj_colls %in% colnames(subject)])))
+  }
+  
+  ## ALGORITHM =============================================================
+  
+  weight = subject$subject_weight
+  bmr_J_per_sec <- bmrFactor(subject)
+  
+  if (nrow(classification) == 0) {
+    classification <- add_NA_row(classification)
+  }
+  
+  classif <- classification$class
+  classification <- mutate(classification, class = as.character(class))
+  
+  ## AEE & TEE
+  # Add regression values by class
+  regression_values <- data.table(
+    class  = c("lying", "sitting", "standing", "walking", "shuffling", "stair_walking", "cycling"),
+    slope  = c(18.0892, 4.3852, 6.7541, 7.8403, 7.8403, 12.65, 0),
+    offset = c(-0.0052, 0.2299, 0.2085, 1.6568, 1.6568, 4.274, 5.8344))
+  
+  classification <- left_join(classification, regression_values, by = 'class')
+  
+  # Calculate aee & tee    in Watt (joule/sec)
+  # tee is calculated with aee and the bmrFactor result
+  classification <- classification %>%
+    mutate(aee = (slope * mi + offset) * weight,
+           tee = (aee + bmr_J_per_sec) / 0.9)
+  
+  ## MET
+  # 1 MET = 3.5 ml / Kg / min           (ml  = ml vO2)
+  # 1 MET = 1 KCal / Kg / hour
+  # 1 KCal = 210 ml
+  # 1 Cal = 0.21 ml
+  # 1 Cal = 4.1868 Joule
+  # 1 Joule = 0.05016 ml
+  
+  # Add regression values by class
+  regression_vo2 <- data.table(
+    class      = c("lying", "sitting", "standing", "walking", "shuffling", "stair_walking", "cycling"),
+    slope_vo2  = c(63.1861, 11.7473, 21.7711, 49.9526, 49.9526, 39.876, 0    ),
+    offset_vo2 = c( 3.4107,  4.2446,  3.9659,  6.4307,  6.4307, 15.829, 20.73))
+  
+  classification <- left_join(classification, regression_vo2, by = 'class')
+  
+  # Calculate met
+  classification <- classification %>%
+    mutate(met = (slope_vo2 * mi + offset_vo2) / 3.5)
+  
+  
+  # Roundup, and remove not wanted columns, and make class a factor again
+  classification <- classification %>%
+    select(-slope, -offset, -slope_vo2, -offset_vo2) %>%
+    mutate(class = classif)
+  
+  # In case the DF was empty when provided, return empty with new columns.
+  if (nrow(classification) == 1 && is.na(classification$start)) {
+    return(as.data.table(classification[0, ]))
+  }
+  
+  classification[is.na(classification)] <- 0
+  
+  return(data.table(data.frame(classification)))
+}

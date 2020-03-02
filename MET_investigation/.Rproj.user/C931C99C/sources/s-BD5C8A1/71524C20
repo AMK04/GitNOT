@@ -1,0 +1,26 @@
+{
+    "collab_server" : "",
+    "contents" : "",
+    "created" : 1576685893585.000,
+    "dirty" : false,
+    "encoding" : "UTF-8",
+    "folds" : "",
+    "hash" : "0",
+    "id" : "71524C20",
+    "lastKnownWriteTime" : 1578065829,
+    "last_content_update" : 1578065829616,
+    "path" : "C:/R_projects/MET_investigation/data186.R",
+    "project_path" : "data186.R",
+    "properties" : {
+        "cursorPosition" : "8,38",
+        "scrollLine" : "0",
+        "tempName" : "Untitled1"
+    },
+    "read_only" : false,
+    "read_only_alternatives" : [
+    ],
+    "relative_order" : 8,
+    "source_on_save" : false,
+    "source_window" : "",
+    "type" : "r_source"
+}

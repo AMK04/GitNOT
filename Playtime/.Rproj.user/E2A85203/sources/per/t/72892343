@@ -1,0 +1,33 @@
+{
+    "collab_server" : "",
+    "contents" : "",
+    "created" : 1583153803861.000,
+    "dirty" : false,
+    "encoding" : "",
+    "folds" : "",
+    "hash" : "0",
+    "id" : "72892343",
+    "lastKnownWriteTime" : 2223426324408,
+    "last_content_update" : 1583153803861,
+    "path" : null,
+    "project_path" : null,
+    "properties" : {
+        "cacheKey" : "351891FA",
+        "caption" : "mm_svd_compl",
+        "contentUrl" : "grid_resource/gridviewer.html?env=&obj=mm_svd_compl&cache_key=351891FA",
+        "displayedObservations" : 95,
+        "environment" : "",
+        "expression" : "mm_svd_compl",
+        "object" : "mm_svd_compl",
+        "preview" : 0,
+        "totalObservations" : 95,
+        "variables" : 6
+    },
+    "read_only" : false,
+    "read_only_alternatives" : [
+    ],
+    "relative_order" : 10,
+    "source_on_save" : false,
+    "source_window" : "",
+    "type" : "r_dataframe"
+}

@@ -1,0 +1,33 @@
+{
+    "collab_server" : "",
+    "contents" : "",
+    "created" : 1576140391504.000,
+    "dirty" : false,
+    "encoding" : "",
+    "folds" : "",
+    "hash" : "0",
+    "id" : "F0D90C5D",
+    "lastKnownWriteTime" : 1576140157,
+    "last_content_update" : 1576140391504,
+    "path" : null,
+    "project_path" : null,
+    "properties" : {
+        "cacheKey" : "A25999A4",
+        "caption" : "McR_vs_table",
+        "contentUrl" : "grid_resource/gridviewer.html?env=&obj=McR_vs_table&cache_key=A25999A4",
+        "displayedObservations" : "51",
+        "environment" : "",
+        "expression" : "McR_vs_table",
+        "object" : "McR_vs_table",
+        "preview" : "0",
+        "totalObservations" : "51",
+        "variables" : "14"
+    },
+    "read_only" : false,
+    "read_only_alternatives" : [
+    ],
+    "relative_order" : 5,
+    "source_on_save" : false,
+    "source_window" : "",
+    "type" : "r_dataframe"
+}

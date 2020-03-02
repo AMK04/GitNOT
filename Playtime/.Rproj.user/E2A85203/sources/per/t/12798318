@@ -1,0 +1,33 @@
+{
+    "collab_server" : "",
+    "contents" : "",
+    "created" : 1581521261258.000,
+    "dirty" : false,
+    "encoding" : "",
+    "folds" : "",
+    "hash" : "0",
+    "id" : "12798318",
+    "lastKnownWriteTime" : 7885362534758641253,
+    "last_content_update" : 1581521261258,
+    "path" : null,
+    "project_path" : null,
+    "properties" : {
+        "cacheKey" : "16C2DBB8",
+        "caption" : "mm_classification",
+        "contentUrl" : "grid_resource/gridviewer.html?env=&obj=mm_classification&cache_key=16C2DBB8",
+        "displayedObservations" : "443",
+        "environment" : "",
+        "expression" : "mm_classification",
+        "object" : "mm_classification",
+        "preview" : "0",
+        "totalObservations" : "443",
+        "variables" : "203"
+    },
+    "read_only" : false,
+    "read_only_alternatives" : [
+    ],
+    "relative_order" : 10,
+    "source_on_save" : false,
+    "source_window" : "",
+    "type" : "r_dataframe"
+}

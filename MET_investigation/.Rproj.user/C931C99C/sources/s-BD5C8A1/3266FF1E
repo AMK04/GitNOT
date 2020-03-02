@@ -1,0 +1,25 @@
+{
+    "collab_server" : "",
+    "contents" : "",
+    "created" : 1576073684125.000,
+    "dirty" : false,
+    "encoding" : "UTF-8",
+    "folds" : "",
+    "hash" : "0",
+    "id" : "3266FF1E",
+    "lastKnownWriteTime" : 1578062519,
+    "last_content_update" : 1578062520029,
+    "path" : "C:/R_projects/MET_investigation/main2.R",
+    "project_path" : "main2.R",
+    "properties" : {
+        "cursorPosition" : "91,1",
+        "scrollLine" : "56"
+    },
+    "read_only" : false,
+    "read_only_alternatives" : [
+    ],
+    "relative_order" : 2,
+    "source_on_save" : false,
+    "source_window" : "",
+    "type" : "r_source"
+}

@@ -1,0 +1,26 @@
+{
+    "collab_server" : "",
+    "contents" : "",
+    "created" : 1581520303273.000,
+    "dirty" : false,
+    "encoding" : "UTF-8",
+    "folds" : "",
+    "hash" : "1893212803",
+    "id" : "A481D5C3",
+    "lastKnownWriteTime" : 1583153950,
+    "last_content_update" : 1583153950854,
+    "path" : "M:/Amber/Laptop/R_projects/Playtime/mainMM.R",
+    "project_path" : "mainMM.R",
+    "properties" : {
+        "cursorPosition" : "98,15",
+        "scrollLine" : "67",
+        "tempName" : "Untitled1"
+    },
+    "read_only" : false,
+    "read_only_alternatives" : [
+    ],
+    "relative_order" : 7,
+    "source_on_save" : false,
+    "source_window" : "",
+    "type" : "r_source"
+}

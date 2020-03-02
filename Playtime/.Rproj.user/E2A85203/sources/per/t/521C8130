@@ -1,0 +1,33 @@
+{
+    "collab_server" : "",
+    "contents" : "",
+    "created" : 1581933257693.000,
+    "dirty" : false,
+    "encoding" : "",
+    "folds" : "",
+    "hash" : "0",
+    "id" : "521C8130",
+    "lastKnownWriteTime" : 8246223293474941986,
+    "last_content_update" : 1581933257693,
+    "path" : null,
+    "project_path" : null,
+    "properties" : {
+        "cacheKey" : "4979B25D",
+        "caption" : "mm_distinct",
+        "contentUrl" : "grid_resource/gridviewer.html?env=&obj=mm_distinct&cache_key=4979B25D",
+        "displayedObservations" : "432",
+        "environment" : "",
+        "expression" : "mm_distinct",
+        "object" : "mm_distinct",
+        "preview" : "0",
+        "totalObservations" : "432",
+        "variables" : "203"
+    },
+    "read_only" : false,
+    "read_only_alternatives" : [
+    ],
+    "relative_order" : 4,
+    "source_on_save" : false,
+    "source_window" : "",
+    "type" : "r_dataframe"
+}
